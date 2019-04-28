@@ -65,7 +65,7 @@ public class Project {
 		
 		public boolean gameStatus() {
 			char color = m[0][0];
-			int consecutives = 1;
+			int consecutives = 0;
 			// First check horizontals;
 			for(int i = 0; i< 6 ; i++) {
 				for(int j = 0; j< 7; j++) {
@@ -83,6 +83,7 @@ public class Project {
 				consecutives = 1;
 			}
 			color = m[0][0];
+			consecutives = 0;
 			// Now check verticals
 			for(int i = 0; i< 7 ; i++) {
 				for(int j = 0; j< 6; j++) {
@@ -102,6 +103,7 @@ public class Project {
 			// Check diagonals: lots of repeats
 			//Main diagonal has a length of 6 and starts at 0,0
 			color = m[0][0];
+			consecutives = 0;
 			for(int i = 0; i<6; i++) {
 				if(m[i][i] == color && color != '\u0000') {
 					consecutives++;
@@ -115,6 +117,7 @@ public class Project {
 				}
 			}
 			color = m[0][1];
+			consecutives = 0;
 			for(int i = 0; i<6; i++) {
 				if(m[i][i+1] == color && color != '\u0000') {
 					consecutives++;
@@ -128,7 +131,8 @@ public class Project {
 				}
 			}
 			color = m[0][2];
-			for(int i = 0; i<4; i++) {
+			consecutives = 0;
+			for(int i = 0; i<5; i++) {
 				if(m[i][i+2] == color && color != '\u0000') {
 					consecutives++;
 				}else {
@@ -141,7 +145,8 @@ public class Project {
 				}
 			}
 			color = m[0][3];
-			for(int i = 0; i<3; i++) {
+			consecutives = 0;
+			for(int i = 0; i<4; i++) {
 				if(m[i][i+3] == color && color != '\u0000') {
 					consecutives++;
 				}else {
@@ -154,7 +159,8 @@ public class Project {
 				}
 			}
 			color = m[1][0];
-			for(int i = 1; i<5; i++) {
+			consecutives = 0;
+			for(int i = 1; i<6; i++) {
 				if(m[i][i-1] == color && color != '\u0000') {
 					consecutives++;
 				}else {
@@ -167,7 +173,8 @@ public class Project {
 				}
 			}
 			color = m[2][0];
-			for(int i = 2; i<4; i++) {
+			consecutives = 0;
+			for(int i = 2; i<6; i++) {
 				if(m[i][i-2] == color && color != '\u0000') {
 					consecutives++;
 				}else {
@@ -181,6 +188,7 @@ public class Project {
 			}
 			// Reverse diagonal
 			color = m[0][6];
+			consecutives = 0;
 			for(int i = 0; i<6; i++) {
 				if(m[i][6-i] == color && color != '\u0000') {
 					consecutives++;
@@ -194,6 +202,7 @@ public class Project {
 				}
 			}
 			color = m[0][5];
+			consecutives = 0;
 			for(int i = 0; i<6; i++) {
 				if(m[i][5-i] == color && color != '\u0000') {
 					consecutives++;
@@ -207,6 +216,7 @@ public class Project {
 				}
 			}
 			color = m[0][4];
+			consecutives = 0;
 			for(int i = 0; i<5; i++) {
 				if(m[i][4-i] == color && color != '\u0000') {
 					consecutives++;
@@ -220,6 +230,7 @@ public class Project {
 				}
 			}
 			color = m[0][3];
+			consecutives = 0;
 			for(int i = 0; i<4; i++) {
 				if(m[i][3-i] == color && color != '\u0000') {
 					consecutives++;
@@ -233,6 +244,7 @@ public class Project {
 				}
 			}
 			color = m[1][6];
+			consecutives = 0;
 			for(int i = 1; i<6; i++) {
 				if(m[i][6-i] == color && color != '\u0000') {
 					consecutives++;
@@ -246,6 +258,7 @@ public class Project {
 				}
 			}
 			color = m[2][6];
+			consecutives = 0;
 			for(int i = 2; i<6; i++) {
 				if(m[i][6-i] == color && color != '\u0000') {
 					consecutives++;
