@@ -1,5 +1,6 @@
 // Kevin Lin 110277459
 import java.util.*;
+// Add tests
 public class Project {
 
 	public static void main(String[] args) {
