@@ -35,10 +35,7 @@ public class Project {
 		private char m[][] = new char[6][7];
 		public Game(){};
 		public boolean putPiece(char color, int column) {
-			if(column > 6 || column < 0) {
-				System.out.print("Error, column out of bounds\n");
-				return false;
-			}else {
+			try {
 				if(m[0][column] != '\u0000') {
 					System.out.print("This column is full\n");
 					return false;
@@ -50,6 +47,10 @@ public class Project {
 					}
 				}
 				}
+				
+			}catch (ArrayIndexOutOfBoundsException e) {
+				System.out.print("Error, column out of bounds\n");
+				return false;
 			}
 			return true;
 		}
