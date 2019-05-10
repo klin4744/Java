@@ -14,7 +14,6 @@ public class ReverseFile_110277459 {
 			for(int i = 0; i< 100; i++) {
 				str += createRandomString() + " ";
 			}
-			System.out.println(str);
 			FileWriter fileWriter = new FileWriter("randString.txt");
 			fileWriter.write(str);
 			fileWriter.close();
@@ -28,21 +27,27 @@ public class ReverseFile_110277459 {
 		}
 		fr.close();
 		scanner.close();
+		System.out.println("The current file reads: ");
+		System.out.println(arr.toString().substring(1,arr.toString().length()-1).replaceAll(",", ""));
 		Collections.sort(arr);
 		String sortedStr = "";
 		for(int i = 0; i<arr.size(); i++) {
 			sortedStr += arr.get(i) + " ";
 		}
+		System.out.println("The sorted string is: ");
 		System.out.print(sortedStr);
+		FileWriter writer = new FileWriter("randString.txt");
+		writer.write(sortedStr);
+		writer.close();
 	}
 	public static String createRandomString() {
 		String str = "";
 		char character;
-		int strLength = (int) (Math.floor(Math.random() * ((10 - 3) + 3)));
+		int strLength = (int) (Math.floor(Math.random() * ((10 - 3) ) + 3));
 		for(int i = 0; i<strLength+1; i++) {
-			character = (char) (Math.floor(Math.random() * ((122 - 48) + 48)));
+			character = (char) (Math.floor(Math.random() * ((122 - 48)) + 48));
 			while ((character >= ':' && character <= '@') || (character >= '[' && character <= '`')) {
-				character = (char) (int) (Math.random() * ((122 - 48) + 48));
+				character = (char) (Math.floor(Math.random() * ((122 - 48)) + 48));
 			}
 			str += character;
 		}
