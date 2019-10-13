@@ -1,4 +1,7 @@
-// Kevin Lin 110277459
+// Kevin Lin
+// While this isn't the most impressive piece of code I've written, it is one of the ones that will always hold a place in my heart.
+// This is the first piece of code I've written in which I had to actually come up with a creative solution to solve a real problem.
+// I did some simple data analysis here as well. It shows my previous background, before I was commited entirely to software. 
 public class Heart_Rate_Noise_Cancel {
 
 	public static void main(String[] args) {
